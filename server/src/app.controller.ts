@@ -6,7 +6,7 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  getToken(): string {
-    return this.appService.getEncodedToken();
+  getToken(): { token: string } {
+    return { token: this.appService.getEncodedToken() };
   }
 }
