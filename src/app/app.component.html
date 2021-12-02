@@ -1,0 +1,52 @@
+<mat-sidenav-container class="sidenav-container mat-app-background {{ currTheme }}">
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <a mat-button aria-current="page" routerLink="/" routerLinkActive="active current"
+        ><h1>{{ title }}</h1></a
+      >
+      <div class="ms-auto">
+        <mat-icon
+          matTooltip="Change document theme"
+          class="mat-icon"
+          style="cursor: pointer"
+          mat-button
+          [matMenuTriggerFor]="menu"
+          >format_color_fill</mat-icon
+        >
+        <mat-menu #menu="matMenu" xPosition="before">
+          <button mat-menu-item (click)="changeTheme('indigo-pink-theme')">
+            <mat-icon *ngIf="!(currTheme === 'indigo-pink-theme')" class="mat-icon">radio_button_unchecked</mat-icon>
+            <mat-icon *ngIf="currTheme === 'indigo-pink-theme'" class="mat-icon" color="accent"
+              >radio_button_checked</mat-icon
+            >
+            <span>Indigo Pink</span>
+          </button>
+          <button mat-menu-item (click)="changeTheme('deep-purple-amber-theme')">
+            <mat-icon *ngIf="!(currTheme === 'deep-purple-amber-theme')" class="mat-icon"
+              >radio_button_unchecked</mat-icon
+            >
+            <mat-icon *ngIf="currTheme === 'deep-purple-amber-theme'" class="mat-icon" color="accent"
+              >radio_button_checked</mat-icon
+            >
+            <span>Deep Purple & Amber</span>
+          </button>
+          <button mat-menu-item (click)="changeTheme('pink-blue-grey-theme')">
+            <mat-icon *ngIf="!(currTheme === 'pink-blue-grey-theme')" class="mat-icon">radio_button_unchecked</mat-icon>
+            <mat-icon *ngIf="currTheme === 'pink-blue-grey-theme'" class="mat-icon" color="accent"
+              >radio_button_checked</mat-icon
+            >
+            <span>Pink & Blue Grey</span>
+          </button>
+          <button mat-menu-item (click)="changeTheme('purple-green-theme')">
+            <mat-icon *ngIf="!(currTheme === 'purple-green-theme')" class="mat-icon">radio_button_unchecked</mat-icon>
+            <mat-icon *ngIf="currTheme === 'purple-green-theme'" class="mat-icon" color="accent"
+              >radio_button_checked</mat-icon
+            >
+            <span>Purple & Green</span>
+          </button>
+        </mat-menu>
+      </div>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
