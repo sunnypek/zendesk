@@ -2,7 +2,9 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class AppService {
-  getHello(): string {
-    return 'Hello World!';
+  getEncodedToken(): string {
+    return Buffer.from(process.env.EMAIL + ':' + process.env.PASS).toString(
+      'base64',
+    );
   }
 }
