@@ -11,7 +11,8 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { LayoutModule } from "@angular/cdk/layout";
 import { MatTooltipModule } from "@angular/material/tooltip";
-import { HomeComponent } from './home/home/home.component';
+import { HomeComponent } from "./home/home/home.component";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
@@ -26,6 +27,7 @@ import { HomeComponent } from './home/home/home.component';
     MatSidenavModule,
     LayoutModule,
     MatTooltipModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
