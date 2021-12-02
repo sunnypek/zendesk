@@ -10,7 +10,7 @@ import { map, shareReplay } from "rxjs/operators";
   styleUrls: ["./app.component.scss"],
 })
 export class AppComponent {
-  title = "zendesk";
+  title = "Zendesk Coding Challenge";
   currTheme: string = localStorage.getItem("theme") ? <string>localStorage.getItem("theme") : "indigo-pink-theme";
 
   constructor(private overlayContainer: OverlayContainer, private breakpointObserver: BreakpointObserver) {}
