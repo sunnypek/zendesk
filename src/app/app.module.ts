@@ -13,6 +13,7 @@ import { LayoutModule } from "@angular/cdk/layout";
 import { MatTooltipModule } from "@angular/material/tooltip";
 import { HomeComponent } from "./home/home.component";
 import { HttpClientModule } from "@angular/common/http";
+import { ZendeskService } from "./services/zendesk.service";
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
@@ -29,7 +30,7 @@ import { HttpClientModule } from "@angular/common/http";
     MatTooltipModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [ZendeskService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
