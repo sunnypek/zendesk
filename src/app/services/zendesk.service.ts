@@ -1,9 +1,13 @@
-import { Injectable } from '@angular/core';
+import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class ZendeskService {
+  constructor(private http: HttpClient) {}
 
-  constructor() { }
+  getTickets(): any {
+    return;
+  }
 }
