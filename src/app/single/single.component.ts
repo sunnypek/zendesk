@@ -1,5 +1,5 @@
-import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { AfterViewInit, Component, OnInit } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
 import { Ticket } from "server/dist/model/ticket.model";
 import { ZendeskService } from "../services/zendesk.service";
 
@@ -8,15 +8,24 @@ import { ZendeskService } from "../services/zendesk.service";
   templateUrl: "./single.component.html",
   styleUrls: ["./single.component.scss"],
 })
-export class SingleComponent implements OnInit {
-  constructor(private zendeskService: ZendeskService, private route: ActivatedRoute) {}
-  ticket!: Ticket;
+export class SingleComponent implements OnInit, AfterViewInit {
+  constructor(private zendeskService: ZendeskService, private route: ActivatedRoute, private router: Router) {}
+  ticket: Ticket = new Ticket("", "", "", "", "", "");
+  id: string = "";
+
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
-      this.zendeskService.getTicket(params.id).subscribe((singleTicket) => {
-        this.ticket = singleTicket;
-        console.log(this.ticket);
-      });
+      this.id = params.id;
     });
+  }
+
+  ngAfterViewInit(): void {
+    this.zendeskService.getTicket(this.id).subscribe((singleTicket) => {
+      this.ticket = singleTicket;
+    });
+  }
+
+  backToHome(): void {
+    this.router.navigate([""]);
   }
 }

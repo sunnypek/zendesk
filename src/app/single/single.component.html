@@ -1,1 +1,19 @@
-<p>single works!</p>
+<div class="d-flex justify-content-center mt-5">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ ticket.subject }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <span style="font-weight: bold">Description:</span>
+      <p>
+        {{ ticket.description }}
+      </p>
+      Priority: <span style="font-weight: bold">{{ ticket.priority }}</span>
+      <br />
+      Status: <span style="font-weight: bold">{{ ticket.status }}</span>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button (click)="backToHome()">Back</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
