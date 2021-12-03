@@ -5,7 +5,6 @@
 export const environment = {
   production: false,
   tokenApiUrl: "http://localhost:3000/",
-  zendeskApiUrl: "https://zccsunnypek.zendesk.com/api/v2/tickets",
 };
 
 /*
