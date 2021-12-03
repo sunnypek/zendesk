@@ -14,7 +14,6 @@ export class AppController {
 
   @Get(':id')
   getTicket(@Param('id') id: string): Observable<Ticket> {
-    console.log('param ', id);
     return this.appService.getTicket(id);
   }
 }
