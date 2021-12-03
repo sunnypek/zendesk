@@ -2,12 +2,13 @@
 
 clone git repo
 
-run following commands in terminal in order:  
-  
+run following commands in terminal in order:
+
+cd zendesk  
 npm install  
 npm run start
 
-open new terminal  
+open new terminal
 
 cd server  
 npm install  
