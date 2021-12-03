@@ -3,6 +3,7 @@ import { Ticket } from "server/dist/model/ticket.model";
 import { ZendeskService } from "src/app/services/zendesk.service";
 import { MatPaginator } from "@angular/material/paginator";
 import { MatTableDataSource } from "@angular/material/table";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-home",
@@ -10,7 +11,7 @@ import { MatTableDataSource } from "@angular/material/table";
   styleUrls: ["./home.component.scss"],
 })
 export class HomeComponent implements OnInit {
-  constructor(private zendeskService: ZendeskService) {}
+  constructor(private zendeskService: ZendeskService, private router: Router) {}
   displayedColumns: string[] = ["id", "subject", "priority", "status"];
   dataSource = new MatTableDataSource<Ticket>();
 
@@ -26,6 +27,6 @@ export class HomeComponent implements OnInit {
   }
 
   enterSingleTicket(clickTicket: Ticket) {
-    console.log(clickTicket.url);
+    this.router.navigate([clickTicket.id]);
   }
 }
