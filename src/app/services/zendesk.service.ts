@@ -21,7 +21,8 @@ export class ZendeskService {
   }
 
   getTicket(id: string): Observable<Ticket> {
-    return this.http.get<Ticket>(environment.tokenApiUrl + id).pipe(
+    return this.http.get<{ ticket: Ticket }>(environment.tokenApiUrl + id).pipe(
+      map((response) => response.ticket),
       catchError((error: HttpErrorResponse) => {
         this.handleError(error);
         return throwError(error.statusText);
