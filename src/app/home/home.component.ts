@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { Ticket } from "server/dist/model/ticket.model";
+import { Ticket } from "../models/ticket.model";
 import { ZendeskService } from "src/app/services/zendesk.service";
 import { MatPaginator } from "@angular/material/paginator";
 import { MatTableDataSource } from "@angular/material/table";

@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { Ticket } from "server/dist/model/ticket.model";
+import { Ticket } from "../models/ticket.model";
 import { ZendeskService } from "../services/zendesk.service";
 
 @Component({
