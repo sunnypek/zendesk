@@ -16,9 +16,10 @@ import { HttpClientModule } from "@angular/common/http";
 import { ZendeskService } from "./services/zendesk.service";
 import { MatTableModule } from "@angular/material/table";
 import { MatPaginatorModule } from "@angular/material/paginator";
+import { SingleComponent } from "./single/single.component";
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent, HomeComponent, SingleComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
