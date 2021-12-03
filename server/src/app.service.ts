@@ -29,4 +29,22 @@ export class AppService {
         }),
       );
   }
+
+  getTicket(id: string): Observable<Ticket> {
+    return this.httpService
+      .get<Ticket>(process.env.APIURL + '/' + id, {
+        headers: { Authorization: 'Basic ' + this.encodedToken },
+      })
+      .pipe(
+        map((response) => response.data),
+        catchError((error: HttpException) => {
+          // log error somewhere
+          // console.log('server error\n', error);
+          throw new HttpException(
+            'API not reachable',
+            HttpStatus.SERVICE_UNAVAILABLE,
+          );
+        }),
+      );
+  }
 }
