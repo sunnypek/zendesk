@@ -1,12 +1,14 @@
 import { Controller, Get } from '@nestjs/common';
+import { Observable } from 'rxjs';
 import { AppService } from './app.service';
+import { Ticket } from './model/ticket.model';
 
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  getToken(): { token: string } {
-    return { token: this.appService.getEncodedToken() };
+  getTickets(): Observable<Ticket[]> {
+    return this.appService.getTickets();
   }
 }
