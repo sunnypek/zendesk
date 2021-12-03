@@ -14,6 +14,7 @@ import { MatTooltipModule } from "@angular/material/tooltip";
 import { HomeComponent } from "./home/home.component";
 import { HttpClientModule } from "@angular/common/http";
 import { ZendeskService } from "./services/zendesk.service";
+import { MatTableModule } from "@angular/material/table";
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
@@ -29,6 +30,7 @@ import { ZendeskService } from "./services/zendesk.service";
     LayoutModule,
     MatTooltipModule,
     HttpClientModule,
+    MatTableModule,
   ],
   providers: [ZendeskService],
   bootstrap: [AppComponent],
