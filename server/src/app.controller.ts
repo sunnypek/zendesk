@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { Observable } from 'rxjs';
 import { AppService } from './app.service';
 import { Ticket } from './model/ticket.model';
@@ -10,5 +10,11 @@ export class AppController {
   @Get()
   getTickets(): Observable<Ticket[]> {
     return this.appService.getTickets();
+  }
+
+  @Get(':id')
+  getTicket(@Param('id') id: string): Observable<Ticket> {
+    console.log('param ', id);
+    return this.appService.getTicket(id);
   }
 }
