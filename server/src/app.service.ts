@@ -19,7 +19,7 @@ export class AppService {
       })
       .pipe(
         map((response) => response.data.tickets),
-        catchError((error: HttpException) => {
+        catchError(() => {
           throw new HttpException(
             'API not reachable',
             HttpStatus.SERVICE_UNAVAILABLE,
