@@ -1,8 +1,10 @@
 export class Ticket {
-  id: string;
-  description: string;
-  url: string;
-  subject: string;
-  priority: string;
-  status: string;
+  constructor(
+    public id: string,
+    public desc: string,
+    public url: string,
+    public subject: string,
+    public priority: string,
+    public status: string,
+  ) {}
 }
