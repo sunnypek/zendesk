@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Ticket } from "server/dist/model/ticket.model";
 import { ZendeskService } from "src/app/services/zendesk.service";
 
 @Component({
@@ -7,12 +8,14 @@ import { ZendeskService } from "src/app/services/zendesk.service";
   styleUrls: ["./home.component.scss"],
 })
 export class HomeComponent implements OnInit {
-  private token: string = "";
   constructor(private zendeskService: ZendeskService) {}
-
+  displayedColumns: string[] = ["id", "subject", "priority", "status"];
+  ticketArr: Ticket[] = [];
   ngOnInit(): void {
-    this.zendeskService.getToken().subscribe((response) => {
-      console.log(response);
-    });
+    this.zendeskService.getTickets().subscribe((arr) => (this.ticketArr = arr));
+  }
+
+  enterSingleTicket(clickTicket: Ticket) {
+    console.log(clickTicket.url);
   }
 }
