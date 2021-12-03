@@ -15,6 +15,7 @@ import { HomeComponent } from "./home/home.component";
 import { HttpClientModule } from "@angular/common/http";
 import { ZendeskService } from "./services/zendesk.service";
 import { MatTableModule } from "@angular/material/table";
+import { MatPaginatorModule } from "@angular/material/paginator";
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
@@ -31,6 +32,7 @@ import { MatTableModule } from "@angular/material/table";
     MatTooltipModule,
     HttpClientModule,
     MatTableModule,
+    MatPaginatorModule,
   ],
   providers: [ZendeskService],
   bootstrap: [AppComponent],
