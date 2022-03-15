@@ -18,9 +18,10 @@ import { MatTableModule } from "@angular/material/table";
 import { MatPaginatorModule } from "@angular/material/paginator";
 import { SingleComponent } from "./single/single.component";
 import { MatCardModule } from "@angular/material/card";
+import { CountsComponent } from './counts/counts.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, SingleComponent],
+  declarations: [AppComponent, HomeComponent, SingleComponent, CountsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

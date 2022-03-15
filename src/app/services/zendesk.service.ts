@@ -4,6 +4,7 @@ import { Observable, throwError } from "rxjs";
 import { catchError, map } from "rxjs/operators";
 import { Ticket } from "../models/ticket.model";
 import { environment } from "../../environments/environment";
+import { TicketCount } from "../models/ticketCount.model";
 
 @Injectable({
   providedIn: "root",
@@ -28,6 +29,10 @@ export class ZendeskService {
         return throwError(error.statusText);
       })
     );
+  }
+
+  getTicketsCount(): Observable<TicketCount> {
+    return this.http.get<TicketCount>(environment.tokenApiUrl + "count");
   }
 
   private handleError(error: HttpErrorResponse): void {
